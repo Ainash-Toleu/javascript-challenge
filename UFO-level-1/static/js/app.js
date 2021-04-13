@@ -35,3 +35,18 @@ function handleClick() {
 
 // We can use the `on` function in d3 to attach an event to the handler function
 button.on("click", handleClick);  
+
+// grab references to the input element and the output div
+var text = d3.select("#datetime");
+var output = d3.select(".output");
+
+// Function to handle input change
+function handleChange(event) {
+  // grab the value of the input field
+  var inputText = d3.event.target.value;
+
+  // Set the output text to the reversed input string
+  output.text(inputText);
+}
+
+text.on("change", handleChange);
