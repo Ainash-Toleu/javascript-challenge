@@ -49,7 +49,22 @@ function runEnter() {
   var inputShapeValue = inputShape.property("value");
 
   // filter UFO data by serch value
-  var filteredData = tableData.filter(ufo => ufo.datetime === inputValue);
+  if (inputDateValue) {
+    var filteredData = tableData.filter(ufo => ufo.datetime === inputDateValue);
+  }
+  else if (inputCityValue) {
+    var filteredData = tableData.filter(ufo => ufo.city === inputCityValue);
+  }
+  else if (inputStateValue) {
+    var filteredData = tableData.filter(ufo => ufo.state === inputStateValue);
+  }
+  else if (inputCountryValue) {
+    var filteredData = tableData.filter(ufo => ufo.state === inputCountryValue);
+  }
+  else if (inputShapeValue) {
+    var filteredData = tableData.filter(ufo => ufo.state === inputShapeValue);
+  }
+  
 
   tbody.html("");
 
