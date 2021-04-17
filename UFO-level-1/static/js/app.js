@@ -58,27 +58,4 @@ function runEnter() {
       cell.text(value);
     });
   });
-
-  // var dateTime = filteredData.map(ufo => ufo.datetime);
-  // var city = filteredData.map(ufo => ufo.city);
-  // var state = filteredData.map(ufo => ufo.state);
-  // var country = filteredData.map(ufo => ufo.country);
-  // var shape = filteredData.map(ufo => ufo.shape);
-  // var minutes = filteredData.map(ufo => ufo.durationMinutes);
-  // var comments = filteredData.map(ufo => ufo.comments);
-
-  // Then, select the unordered list element by class name
-  // var list = d3.select(".summary");
-
-  // // remove any data from the list to
-  // list.html("");
-
-  // // append stats to the list
-  // list.append("li").text(`Datetime: ${dateTime}`);
-  // list.append("li").text(`City: ${city}`);
-  // list.append("li").text(`State: ${state}`);
-  // list.append("li").text(`Country: ${country}`);
-  // list.append("li").text(`Shape: ${shape}`);
-  // list.append("li").text(`Duration minutes: ${minutes}`);
-  // list.append("li").text(`Comments: ${comments}`);
 };
