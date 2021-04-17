@@ -48,22 +48,15 @@ function runEnter() {
   var inputCountryValue = inputCountry.property("value");
   var inputShapeValue = inputShape.property("value");
 
-  // filter UFO data by serch value
-  if (inputDateValue) {
-    var filteredData = tableData.filter(ufo => ufo.datetime === inputDateValue);
-  }
-  else if (inputCityValue) {
-    var filteredData = tableData.filter(ufo => ufo.city === inputCityValue);
-  }
-  else if (inputStateValue) {
-    var filteredData = tableData.filter(ufo => ufo.state === inputStateValue);
-  }
-  else if (inputCountryValue) {
-    var filteredData = tableData.filter(ufo => ufo.state === inputCountryValue);
-  }
-  else if (inputShapeValue) {
-    var filteredData = tableData.filter(ufo => ufo.state === inputShapeValue);
-  }
+  // filter UFO data by serch value. 
+  if (inputDateValue || inputCityValue || inputStateValue || inputCountryValue || inputShapeValue) {
+    filteredData = tableData.filter(ufo => (ufo.datetime === inputDateValue || inputDateValue =="") &&
+                                             (ufo.city === inputCityValue || inputCityValue =="") &&
+                                             (ufo.state === inputStateValue || inputStateValue=="") &&
+                                             (ufo.country === inputCountryValue || inputCountryValue=="") &&
+                                             (ufo.shape === inputShapeValue || inputShapeValue ==""));
+}
+else filteredData=tableData;
   
 
   tbody.html("");
