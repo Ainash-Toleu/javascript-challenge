@@ -9,7 +9,6 @@ var tbody = d3.select("tbody");
 // from data.js
 var tableData = data;
 
-// YOUR CODE HERE!
 // append all data in table
 data.forEach((ufoReport) => {
     var row = tbody.append("tr");
@@ -44,6 +43,7 @@ function runEnter() {
   console.log(inputValue);
   console.log(tableData);
 
+  // filter UFO data by serch value
   var filteredData = tableData.filter(ufo => ufo.datetime === inputValue);
 
   console.log("Filtered Data: ");
@@ -51,6 +51,7 @@ function runEnter() {
 
   tbody.html("");
 
+  // append all filtered data in table
   filteredData.forEach((ufoSelected) => {
     var row = tbody.append("tr");
     Object.entries(ufoSelected).forEach(([key, value]) => {
