@@ -35,19 +35,21 @@ function runEnter() {
   d3.event.preventDefault();
   
   // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#datetime");
+  var inputDate = d3.select("#datetime");
+  var inputCity = d3.select("#city");
+  var inputState = d3.select("#state");
+  var inputCountry = d3.select("#country");
+  var inputShape = d3.select("#shape");
 
   // Get the value property of the input element
-  var inputValue = inputElement.property("value");
-
-  console.log(inputValue);
-  console.log(tableData);
+  var inputDateValue = inputDate.property("value");
+  var inputCityValue = inputCity.property("value");
+  var inputStateValue = inputState.property("value");
+  var inputCountryValue = inputCountry.property("value");
+  var inputShapeValue = inputShape.property("value");
 
   // filter UFO data by serch value
   var filteredData = tableData.filter(ufo => ufo.datetime === inputValue);
-
-  console.log("Filtered Data: ");
-  console.log(filteredData);
 
   tbody.html("");
 
